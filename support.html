@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HaulLedger — Support &amp; Contact</title>
+<meta name="description" content="HaulLedger support page. How to track miles, log settlements, run the IFTA calculator, claim per diem, restore purchases, and cancel your subscription." />
+<link rel="canonical" href="https://alexandra767.github.io/haulledger-site/support.html" />
+<meta name="robots" content="index,follow" />
+<meta property="og:title" content="HaulLedger — Support" />
+<meta property="og:description" content="Help with HaulLedger — the truck-tax tracker for iPhone." />
+<meta property="og:url" content="https://alexandra767.github.io/haulledger-site/support.html" />
+<meta property="og:type" content="article" />
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+    margin: 0;
+    padding: 48px 24px;
+    color: #1a2a2c;
+    background: #f6f4ef;
+    line-height: 1.65;
+  }
+  .container { max-width: 720px; margin: 0 auto; }
+  h1 { color: #0D7377; font-family: ui-serif, "Iowan Old Style", Georgia, serif; font-size: 36px; letter-spacing: -0.02em; }
+  h2 { margin-top: 36px; color: #324247; font-family: ui-serif, "Iowan Old Style", Georgia, serif; font-size: 22px; }
+  a { color: #0D7377; font-weight: 500; }
+  strong { color: #0a1a1c; }
+  .faq { margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid rgba(10, 26, 28, 0.10); }
+  .faq strong { font-size: 16px; }
+  .faq p { margin: 6px 0 0; }
+  .back { display: inline-block; margin-top: 32px; color: #324247; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Support</h1>
+  <p>Need help with HaulLedger? Email <a href="mailto:haulledger.help@gmail.com">haulledger.help@gmail.com</a> and we'll respond within 24 hours. Please include your iOS version and a short description of what you were doing when the issue happened.</p>
+
+  <h2>Frequently asked</h2>
+
+  <div class="faq">
+    <strong>How do I start tracking miles?</strong>
+    <p>Open HaulLedger &gt; Trips &gt; <em>Start trip</em>. Grant the Location permission when iOS asks (it requests "Always Allow" so trips keep recording when the phone is in the dash mount). HaulLedger logs your route, detects state-line crossings for IFTA, and computes loaded · empty · bobtail mileage when you mark each trip's status. Stop the trip and it's filed automatically.</p>
+  </div>
+
+  <div class="faq">
+    <strong>How do I log a settlement statement?</strong>
+    <p>Open HaulLedger &gt; Settlements &gt; <em>+ New settlement</em>. Enter the week-ending date, then add each line item: linehaul, detention, fuel surcharge, lease payment, insurance, ELD, lumper, Comdata fees, etc. HaulLedger remembers your recurring deductions so the next settlement is mostly tap-to-confirm.</p>
+  </div>
+
+  <div class="faq">
+    <strong>How does the IFTA quarterly calculator work?</strong>
+    <p>HaulLedger combines your fuel receipts (gallons purchased per state) with your trip log (miles driven per state) to compute average MPG, tax owed, and net refund or balance due for each jurisdiction. Open IFTA &gt; <em>Quarter ▾</em> to pick a quarter; the worksheet is printable or exportable as CSV for your filing.</p>
+  </div>
+
+  <div class="faq">
+    <strong>How is per diem calculated?</strong>
+    <p>The IRS lets transportation workers under hours-of-service rules deduct $69 per day (transportation industry rate, U.S. travel) for meals and incidental expenses when you're <strong>away from your tax home overnight</strong>, at 80% deductibility. HaulLedger detects overnights from your trip log and applies the rate. Partial-travel days (departure and return days) are billed at 75% per the IRS partial-day rule. You can manually toggle any day if a stop was personal.</p>
+  </div>
+
+  <div class="faq">
+    <strong>Can I scan receipts?</strong>
+    <p>Yes. Expenses &gt; <em>+ Add expense</em> &gt; <em>Scan</em>. The OCR runs on-device, no upload. HaulLedger pulls the amount, date, and (when present) the state. Tag the receipt to a Schedule C category — Fuel, Repairs &amp; Maint, Insurance, Tolls &amp; Scales, etc. — and it's filed.</p>
+  </div>
+
+  <div class="faq">
+    <strong>How do I restore purchases on a new iPhone?</strong>
+    <p>Sign in to the same Apple ID you used to subscribe. Open HaulLedger &gt; Settings &gt; <em>Restore Purchases</em>. StoreKit checks your subscription against the App Store and unlocks the app within a few seconds.</p>
+  </div>
+
+  <div class="faq">
+    <strong>How do I cancel my subscription?</strong>
+    <p>iOS Settings &gt; tap your name at the top &gt; Subscriptions &gt; HaulLedger &gt; Cancel Subscription. You keep access until the end of your current billing period. Apple handles refunds (<a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a>).</p>
+  </div>
+
+  <div class="faq">
+    <strong>Does HaulLedger work for company drivers (W-2)?</strong>
+    <p>Partially. Most W-2 driver expenses are no longer deductible under the 2017 Tax Cuts and Jobs Act (the unreimbursed-employee-expense deduction was suspended through 2025). HaulLedger is most valuable for 1099 drivers — owner-operators and lease-purchase operators — who file Schedule C. W-2 drivers can still use HaulLedger to track reimbursable expenses and per-diem allowances paid by their carrier.</p>
+  </div>
+
+  <div class="faq">
+    <strong>Can I export my data to my CPA?</strong>
+    <p>Yes. Reports &gt; <em>Schedule C export</em> produces a PDF + CSV bundle: line-by-line totals mapped to IRS Schedule C lines, plus the source detail your accountant can audit. Send it directly from the share sheet.</p>
+  </div>
+
+  <div class="faq">
+    <strong>Will my data sync across iPhone and iPad?</strong>
+    <p>HaulLedger is currently iPhone-only. If you enable iCloud sync, your data will appear on any future HaulLedger devices signed in to the same iCloud account.</p>
+  </div>
+
+  <div class="faq">
+    <strong>Is HaulLedger a substitute for a CPA?</strong>
+    <p>No. HaulLedger is a tracker. It produces clean numbers; a licensed accountant or tax professional should review and file your return. Per-diem rates, IFTA rates, and Schedule C rules change — verify with your CPA before filing.</p>
+  </div>
+
+  <a class="back" href="https://alexandra767.github.io/haulledger-site/">← Back to HaulLedger</a>
+</div>
+</body>
+</html>

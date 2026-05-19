@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HaulLedger — Trucker tax tracking that pays for itself</title>
+<meta name="description" content="HaulLedger is the tax tracker for truckers. Log settlement statements, calculate IFTA fuel tax across states, claim the $69/day per diem, scan receipts, and export Schedule C — built for owner-operators, lease purchase, and company drivers. iPhone only. 7-day free trial." />
+<meta name="keywords" content="trucker tax app, owner operator tax tracker, IFTA calculator, per diem trucker, settlement statement tracker, Schedule C trucker, fuel tax tracker, lease purchase driver, trucker expense tracker, 1099 trucker taxes" />
+<meta name="author" content="Andrew Titus" />
+<meta name="theme-color" content="#0D7377" />
+<meta name="application-name" content="HaulLedger" />
+<meta name="apple-mobile-web-app-title" content="HaulLedger" />
+
+<link rel="canonical" href="https://alexandra767.github.io/haulledger-site/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="HaulLedger" />
+<meta property="og:url" content="https://alexandra767.github.io/haulledger-site/" />
+<meta property="og:title" content="HaulLedger — Trucker tax tracking that pays for itself" />
+<meta property="og:description" content="The tax tracker built for the cab of the truck. Settlement statements, IFTA quarterly, per diem at $69/day, receipt scanning, Schedule C export. iPhone." />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="HaulLedger — Trucker tax tracking that pays for itself" />
+<meta name="twitter:description" content="Settlement statements, IFTA, per diem, fuel tax, Schedule C — built for owner-operators and lease-purchase drivers. iPhone. 7-day free trial." />
+
+<!-- iOS Smart App Banner -->
+<meta name="apple-itunes-app" content="app-id=6771089775" />
+
+<!-- PWA manifest -->
+<link rel="manifest" href="manifest.json" />
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MobileApplication",
+      "@id": "https://alexandra767.github.io/haulledger-site/#app",
+      "name": "HaulLedger: Truck Tax Tracker",
+      "alternateName": "HaulLedger",
+      "operatingSystem": "iOS 18.0",
+      "applicationCategory": "FinanceApplication",
+      "applicationSubCategory": "Trucking & Tax Tracking",
+      "description": "Tax tracking built for truck drivers. Log settlement statements, calculate IFTA fuel tax across states, claim the $69/day per diem, scan receipts, and export Schedule C. For owner-operators, lease purchase, and company drivers.",
+      "url": "https://alexandra767.github.io/haulledger-site/",
+      "downloadUrl": "https://apps.apple.com/us/app/haulledger-truck-tax-tracker/id6771089775",
+      "installUrl": "https://apps.apple.com/us/app/haulledger-truck-tax-tracker/id6771089775",
+      "offers": [
+        { "@type": "Offer", "name": "Monthly", "price": "14.99", "priceCurrency": "USD", "category": "subscription" },
+        { "@type": "Offer", "name": "Yearly", "price": "99.99", "priceCurrency": "USD", "category": "subscription" }
+      ],
+      "author": { "@id": "https://alexandra767.github.io/haulledger-site/#person" },
+      "publisher": { "@id": "https://alexandra767.github.io/haulledger-site/#person" },
+      "datePublished": "2026-05-19",
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://alexandra767.github.io/haulledger-site/#website",
+      "url": "https://alexandra767.github.io/haulledger-site/",
+      "name": "HaulLedger",
+      "description": "Trucker tax tracking for iPhone.",
+      "publisher": { "@id": "https://alexandra767.github.io/haulledger-site/#person" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://alexandra767.github.io/haulledger-site/#person",
+      "name": "Andrew Titus",
+      "url": "https://alexandra767.github.io/haulledger-site/",
+      "sameAs": [
+        "https://apps.apple.com/us/developer/andrew-titus/id1707920797"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://alexandra767.github.io/haulledger-site/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why can't truckers use the IRS standard mileage rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The IRS standard mileage rate is only available for vehicles that qualify as passenger automobiles. Tractor-trailers and most class-8 trucks do not qualify, so owner-operators have to use the actual expense method — every gallon of fuel, every tire, every repair, every depreciation dollar. HaulLedger is built around that reality from day one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the IFTA calculator work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every fuel purchase and every state-mile entry feeds the IFTA calculator. At the end of a quarter HaulLedger shows you gallons burned and miles driven per jurisdiction, plus a net tax owed or refund per state, ready to plug into your IFTA filing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the per-diem deduction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The IRS lets transportation workers subject to hours-of-service rules deduct $69 per day (2025/2026 transportation industry rate, U.S. travel) for meals and incidental expenses when you're away from your tax home overnight — at 80% deductibility. HaulLedger logs overnights from your trip log and tracks the running total."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data sent to a server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Every settlement, receipt, mile, and fuel ticket is stored on your iPhone with SwiftData. iCloud sync is optional and uses your own iCloud account — there is no HaulLedger server in the middle. No analytics SDK, no ad SDK, no third-party tracker."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does HaulLedger file my taxes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. HaulLedger is a tracker, not a filing service and not a substitute for a CPA. It produces a clean Schedule C export and IFTA quarterly worksheet you can hand to your accountant or type into your filing software."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg:           #f6f4ef;
+    --bg-warm:      #ece8df;
+    --bg-deep:      #d9d3c4;
+    --ink:          #0a1a1c;
+    --ink-soft:     #324247;
+    --ink-mute:     #5a6a6e;
+    --teal:         #0D7377;
+    --teal-deep:    #075459;
+    --teal-mute:    #14A098;
+    --amber:        #F59E0B;
+    --amber-soft:   #fbd38d;
+    --amber-deep:   #b45309;
+    --rule:         rgba(10, 26, 28, 0.14);
+    --display: ui-serif, "Iowan Old Style", "Charter", "Georgia", "Times New Roman", serif;
+    --body:    -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+    --mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Asphalt-grain overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.045;
+    mix-blend-mode: multiply;
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background:
+      radial-gradient(circle at 92% -8%, rgba(245, 158, 11, 0.20) 0%, rgba(246, 244, 239, 0) 50%),
+      radial-gradient(circle at -5% 8%, rgba(13, 115, 119, 0.15) 0%, rgba(246, 244, 239, 0) 55%);
+  }
+
+  ::selection { background: var(--teal); color: var(--bg); }
+
+  /* ===== NAV ===== */
+  nav {
+    position: relative;
+    z-index: 10;
+    padding: 28px 6vw 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav .mark {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+  }
+  nav .mark .seal {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    background: var(--teal);
+    color: var(--bg);
+    display: inline-grid; place-items: center;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 17px;
+    transform: rotate(-4deg);
+    box-shadow: 0 4px 0 var(--teal-deep);
+  }
+  nav ul {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    font-family: var(--body);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  nav a { color: var(--ink-soft); text-decoration: none; transition: color .2s; }
+  nav a:hover { color: var(--teal); }
+  @media (max-width: 720px) { nav ul { display: none; } }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    padding: 60px 6vw 80px;
+    z-index: 5;
+  }
+  .hero .issue {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0.75;
+    margin-bottom: 28px;
+  }
+  .hero .issue::before {
+    content: "▸";
+    margin-right: 10px;
+    color: var(--amber);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 5vw;
+    align-items: center;
+  }
+  @media (max-width: 920px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 60px; }
+  }
+
+  h1.hero-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(44px, 7.5vw, 108px);
+    line-height: 0.96;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+  }
+  h1.hero-title em {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--teal);
+  }
+  h1.hero-title .underline {
+    position: relative;
+    display: inline-block;
+  }
+  h1.hero-title .underline::after {
+    content: "";
+    position: absolute;
+    left: -2%;
+    right: -2%;
+    bottom: 0.05em;
+    height: 0.22em;
+    background: var(--amber-soft);
+    z-index: -1;
+    opacity: 0.85;
+    transform: skew(-4deg);
+  }
+  .hero-lede {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(19px, 1.5vw, 22px);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 32em;
+    margin-top: 32px;
+  }
+  .hero-cta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+  .cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--ink);
+    color: var(--bg);
+    padding: 18px 28px;
+    border-radius: 12px;
+    font-family: var(--body);
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: transform .2s, background .2s;
+    box-shadow: 0 4px 0 #000;
+  }
+  .cta-primary:hover { background: var(--teal); transform: translateY(-2px); box-shadow: 0 6px 0 var(--teal-deep); }
+  .cta-primary svg { width: 18px; height: 18px; }
+  .cta-note {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-soft);
+    opacity: 0.9;
+  }
+
+  /* Hero ledger card */
+  .hero-stage {
+    position: relative;
+    height: clamp(380px, 52vw, 640px);
+  }
+  .ledger {
+    position: absolute;
+    inset: 6% 4%;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    box-shadow:
+      0 30px 60px -22px rgba(10, 26, 28, 0.30),
+      0 8px 18px -8px rgba(10, 26, 28, 0.18);
+    overflow: hidden;
+    transform: rotate(2deg);
+    display: flex;
+    flex-direction: column;
+  }
+  .ledger.back {
+    inset: 12% 0 0 8%;
+    transform: rotate(-3deg);
+    z-index: 1;
+    opacity: 0.7;
+    background: var(--bg-warm);
+  }
+  .ledger-head {
+    background: var(--teal);
+    color: var(--bg);
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .ledger-head .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--amber);
+    display: inline-block;
+    margin-right: 6px;
+  }
+  .ledger-body {
+    padding: 22px 24px;
+    flex: 1;
+  }
+  .ledger-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--rule);
+    font-family: var(--body);
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .ledger-row:last-of-type { border-bottom: none; }
+  .ledger-row .label { font-weight: 500; }
+  .ledger-row .amt {
+    font-family: var(--mono);
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .ledger-row.pos .amt { color: var(--teal-deep); }
+  .ledger-row.neg .amt { color: var(--amber-deep); }
+  .ledger-total {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 2px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--display);
+  }
+  .ledger-total .label {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-family: var(--body);
+    font-weight: 600;
+  }
+  .ledger-total .amt {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--teal);
+    font-family: var(--mono);
+  }
+
+  /* Big floating numeral */
+  .savings-numeral {
+    position: absolute;
+    right: -4%;
+    top: -8%;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(80px, 13vw, 180px);
+    color: var(--amber);
+    line-height: 1;
+    z-index: 4;
+    pointer-events: none;
+    text-shadow: 3px 3px 0 var(--bg);
+    transform: rotate(8deg);
+  }
+  .savings-numeral sup {
+    font-family: var(--body);
+    font-size: 0.18em;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-shadow: none;
+    vertical-align: 1.2em;
+    margin-left: 0.3em;
+  }
+
+  /* ===== TICKER ===== */
+  .ticker {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .ticker-track {
+    display: flex;
+    gap: 56px;
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: clamp(13px, 1.4vw, 16px);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    animation: scroll 42s linear infinite;
+  }
+  .ticker-track span::after {
+    content: "●";
+    margin-left: 56px;
+    color: var(--amber);
+  }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ===== SECTION SHARED ===== */
+  section {
+    position: relative;
+    padding: 120px 6vw;
+    z-index: 5;
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--amber-deep);
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .eyebrow .num {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 16px;
+    margin-right: 10px;
+    color: var(--ink);
+  }
+  h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(34px, 4.6vw, 68px);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    max-width: 14ch;
+  }
+  h2 em {
+    font-style: italic;
+    color: var(--teal);
+    font-weight: 600;
+  }
+  .lede {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(18px, 1.4vw, 21px);
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 38em;
+    margin-top: 24px;
+  }
+
+  /* ===== PULL QUOTE ===== */
+  .pullquote {
+    text-align: center;
+    padding: 140px 6vw 120px;
+    border-top: 1px solid var(--rule);
+  }
+  .pullquote blockquote {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(32px, 5.6vw, 80px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    max-width: 22ch;
+    margin: 0 auto;
+  }
+  .pullquote blockquote .glyph {
+    font-style: normal;
+    color: var(--amber);
+    display: inline-block;
+    transform: translateY(0.18em);
+    margin-right: 0.08em;
+  }
+  .pullquote cite {
+    display: block;
+    margin-top: 36px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-style: normal;
+  }
+
+  /* ===== FEATURES SPREAD ===== */
+  .spread {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 8vw;
+    align-items: center;
+  }
+  .spread.flip { grid-template-columns: 1fr 1.1fr; }
+  .spread.flip .copy { order: 2; }
+  .spread.flip .visual { order: 1; }
+  @media (max-width: 920px) {
+    .spread, .spread.flip { grid-template-columns: 1fr; gap: 60px; }
+    .spread.flip .copy { order: unset; }
+    .spread.flip .visual { order: unset; }
+  }
+
+  .copy .marker {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .copy .marker .roman {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--amber);
+  }
+  .copy .marker .label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--ink-soft);
+  }
+
+  .feature-list {
+    list-style: none;
+    margin-top: 32px;
+    border-top: 1px solid var(--rule);
+  }
+  .feature-list li {
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    font-family: var(--body);
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .feature-list li .glyph {
+    font-family: var(--display);
+    font-weight: 700;
+    color: var(--teal);
+    font-size: 18px;
+    width: 22px;
+    flex-shrink: 0;
+  }
+
+  /* Visual cards */
+  .card-stack {
+    position: relative;
+    max-width: 420px;
+    margin: 0 auto;
+    aspect-ratio: 4/5;
+  }
+  .data-card {
+    position: absolute;
+    inset: 0;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow:
+      0 24px 50px -22px rgba(10, 26, 28, 0.30),
+      0 8px 18px -8px rgba(10, 26, 28, 0.18);
+    transform: rotate(-3deg);
+    display: flex;
+    flex-direction: column;
+  }
+  .data-card.tilt-r { transform: rotate(3deg); }
+  .data-card .head {
+    background: var(--teal);
+    color: var(--bg);
+    padding: 16px 22px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .data-card .head .stamp {
+    background: var(--amber);
+    color: var(--ink);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+  .data-card .body {
+    padding: 22px;
+    flex: 1;
+  }
+  .ifta-row {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--rule);
+    font-family: var(--body);
+    font-size: 14px;
+    align-items: center;
+  }
+  .ifta-row .st {
+    font-family: var(--mono);
+    font-weight: 700;
+    background: var(--bg-warm);
+    color: var(--ink);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 0.08em;
+  }
+  .ifta-row .gal {
+    color: var(--ink-soft);
+    font-family: var(--mono);
+  }
+  .ifta-row .tax {
+    font-family: var(--mono);
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .ifta-row.refund .tax { color: var(--teal-deep); }
+  .ifta-row.owed .tax { color: var(--amber-deep); }
+  .card-caption {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-soft);
+    text-align: center;
+    margin-top: 24px;
+    max-width: 28em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card-caption::before {
+    content: "Fig. ";
+    font-family: var(--mono);
+    font-style: normal;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: var(--amber-deep);
+    margin-right: 6px;
+    font-weight: 700;
+  }
+
+  /* Settlement card */
+  .settlement-line {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 14px;
+  }
+  .settlement-line .l {
+    color: var(--ink-soft);
+    font-family: var(--body);
+  }
+  .settlement-line .r {
+    font-family: var(--mono);
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .settlement-line.deduct .r { color: var(--amber-deep); }
+  .settlement-line.pay .r { color: var(--teal-deep); }
+  .settlement-total {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 2px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .settlement-total .l {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--ink-soft);
+  }
+  .settlement-total .r {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--teal);
+  }
+
+  /* Per-diem visual */
+  .perdiem-card {
+    text-align: center;
+  }
+  .perdiem-card .big {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(72px, 12vw, 128px);
+    line-height: 1;
+    color: var(--teal);
+    letter-spacing: -0.03em;
+  }
+  .perdiem-card .small {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 8px;
+  }
+  .perdiem-formula {
+    margin-top: 28px;
+    padding: 18px;
+    background: var(--bg-warm);
+    border-radius: 10px;
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--ink);
+  }
+  .perdiem-formula .pct {
+    color: var(--amber-deep);
+    font-weight: 700;
+  }
+  .perdiem-formula .eq {
+    color: var(--ink-soft);
+    margin: 0 6px;
+  }
+  .perdiem-formula .out {
+    color: var(--teal-deep);
+    font-weight: 700;
+  }
+
+  /* ===== PRICING ===== */
+  .pricing {
+    padding: 140px 6vw;
+  }
+  .pricing-head {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  .pricing-head h2 {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .price-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  @media (max-width: 720px) { .price-cards { grid-template-columns: 1fr; } }
+
+  .price-card {
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 40px 32px;
+    position: relative;
+  }
+  .price-card.featured {
+    background: linear-gradient(160deg, var(--teal) 0%, var(--teal-deep) 100%);
+    color: var(--bg);
+    border-color: transparent;
+    box-shadow: 0 18px 40px -18px rgba(13, 115, 119, 0.55);
+  }
+  .price-card .tier {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    opacity: 0.85;
+  }
+  .price-card .badge {
+    position: absolute;
+    top: -12px;
+    right: 24px;
+    background: var(--amber);
+    color: var(--ink);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .price-card .price {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 60px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin: 18px 0 8px;
+  }
+  .price-card .price em {
+    font-style: italic;
+    color: var(--amber);
+    font-weight: 600;
+  }
+  .price-card.featured .price em { color: var(--amber-soft); }
+  .price-card .price small {
+    font-family: var(--body);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    opacity: 0.8;
+    text-transform: none;
+    display: block;
+    margin-top: 6px;
+  }
+  .price-card ul {
+    list-style: none;
+    margin-top: 24px;
+    padding: 0;
+  }
+  .price-card li {
+    padding: 10px 0;
+    font-size: 15px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .price-card.featured li { border-top-color: rgba(246, 244, 239, 0.15); }
+  .price-card li:first-child { border-top: none; }
+  .price-card li::before {
+    content: "✓";
+    font-weight: 700;
+    color: var(--teal);
+    flex-shrink: 0;
+  }
+  .price-card.featured li::before { color: var(--amber); }
+  .price-card .alt-cta {
+    display: inline-block;
+    margin-top: 28px;
+    color: inherit;
+    text-decoration: none;
+    font-family: var(--display);
+    font-style: italic;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    transition: color .2s;
+    font-weight: 600;
+  }
+  .price-card.featured .alt-cta:hover { color: var(--amber-soft); }
+  .price-card .alt-cta:hover { color: var(--teal); }
+
+  /* ===== DISCLAIMER BAND ===== */
+  .disclaimer {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 70px 6vw;
+    text-align: center;
+  }
+  .disclaimer-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .disclaimer-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-weight: 700;
+  }
+  .disclaimer p {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(19px, 1.8vw, 24px);
+    line-height: 1.5;
+    max-width: 38em;
+  }
+  .disclaimer strong {
+    color: var(--amber-soft);
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  /* ===== FOOTER ===== */
+  footer.colophon {
+    background: var(--bg);
+    padding: 100px 6vw 60px;
+    border-top: 1px solid var(--rule);
+  }
+  .colophon-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 6vw;
+    margin-bottom: 80px;
+  }
+  @media (max-width: 720px) { .colophon-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+
+  .colophon h3 {
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    color: var(--amber-deep);
+  }
+  .colophon ul { list-style: none; }
+  .colophon li { padding: 4px 0; font-size: 14px; }
+  .colophon a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s;
+  }
+  .colophon a:hover { border-bottom-color: var(--ink); }
+
+  .colophon .sign {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 32px;
+    color: var(--ink);
+    line-height: 1.15;
+    max-width: 18ch;
+  }
+  .colophon .sign em {
+    color: var(--teal);
+    font-weight: 700;
+  }
+  .meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* Scroll-reveal */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .ticker-track { animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="mark">
+    <span class="seal">H</span>
+    HaulLedger
+  </div>
+  <ul>
+    <li><a href="#why">Why</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#perdiem">Per diem</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="support.html">Support</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <p class="issue reveal">For owner-operators, lease purchase &amp; company drivers · iPhone · iOS 18+</p>
+
+  <div class="hero-grid">
+    <div>
+      <h1 class="hero-title reveal">
+        Trucker tax tracking<br/>
+        that <em>pays</em> for <span class="underline">itself.</span>
+      </h1>
+      <p class="hero-lede reveal">
+        HaulLedger logs every settlement, every fuel ticket, every overnight, and every mile — then turns it into an IFTA quarterly worksheet, a running per-diem deduction, and a Schedule C export your accountant can use as-is.
+      </p>
+      <div class="hero-cta reveal">
+        <a class="cta-primary" href="https://apps.apple.com/us/app/haulledger-truck-tax-tracker/id6771089775" aria-label="Download on the App Store">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.05 12.04c-.03-2.95 2.41-4.36 2.52-4.43-1.38-2.01-3.52-2.29-4.28-2.32-1.82-.19-3.55 1.07-4.47 1.07-.92 0-2.34-1.04-3.85-1.01-1.98.03-3.81 1.15-4.83 2.92-2.06 3.57-.53 8.85 1.49 11.75.99 1.42 2.16 3.02 3.69 2.96 1.48-.06 2.04-.96 3.83-.96 1.79 0 2.29.96 3.85.93 1.59-.03 2.6-1.45 3.57-2.88 1.13-1.65 1.59-3.25 1.61-3.34-.04-.02-3.08-1.18-3.13-4.69zM14.27 3.62c.81-.99 1.36-2.36 1.21-3.72-1.17.05-2.59.78-3.43 1.76-.75.87-1.41 2.26-1.23 3.6 1.3.1 2.64-.66 3.45-1.64z"/>
+          </svg>
+          Download on the App Store
+        </a>
+        <span class="cta-note">7-day free trial · iPhone</span>
+      </div>
+    </div>
+
+    <div class="hero-stage" aria-hidden="true">
+      <span class="savings-numeral">$25,140<sup>YTD</sup></span>
+      <div class="ledger back"></div>
+      <div class="ledger">
+        <div class="ledger-head">
+          <span><span class="dot"></span>Settlement · Week 19</span>
+          <span>5/12 — 5/18</span>
+        </div>
+        <div class="ledger-body">
+          <div class="ledger-row pos">
+            <span class="label">Loaded miles · 2,148 mi</span>
+            <span class="amt">$4,510.80</span>
+          </div>
+          <div class="ledger-row pos">
+            <span class="label">Fuel surcharge</span>
+            <span class="amt">$612.40</span>
+          </div>
+          <div class="ledger-row neg">
+            <span class="label">Trailer rent</span>
+            <span class="amt">−$235.00</span>
+          </div>
+          <div class="ledger-row neg">
+            <span class="label">Plate · permits</span>
+            <span class="amt">−$98.50</span>
+          </div>
+          <div class="ledger-row neg">
+            <span class="label">Cargo &amp; bobtail ins.</span>
+            <span class="amt">−$184.20</span>
+          </div>
+          <div class="ledger-total">
+            <span class="label">Net pay</span>
+            <span class="amt">$4,605.50</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Settlement statements</span>
+    <span>IFTA fuel tax · 48 states</span>
+    <span>$69/day per diem · 80% deductible</span>
+    <span>Actual expense method</span>
+    <span>Receipt scanner</span>
+    <span>Schedule C export</span>
+    <span>Bobtail · deadhead · loaded miles</span>
+    <span>Fuel · tires · tolls · scales</span>
+    <span>Settlement statements</span>
+    <span>IFTA fuel tax · 48 states</span>
+    <span>$69/day per diem · 80% deductible</span>
+    <span>Actual expense method</span>
+    <span>Receipt scanner</span>
+    <span>Schedule C export</span>
+    <span>Bobtail · deadhead · loaded miles</span>
+    <span>Fuel · tires · tolls · scales</span>
+  </div>
+</div>
+
+<!-- WHY -->
+<section id="why">
+  <div class="spread">
+    <div class="copy reveal">
+      <div class="marker"><span class="roman">I.</span><span class="label">The thesis</span></div>
+      <h2>Most tax apps don't <em>speak</em> truck.</h2>
+      <p class="lede">
+        Generic tax trackers ask you to pick a "vehicle" and slap on the IRS standard mileage rate. Class-8 trucks don't qualify — you have to use the <em>actual expense method</em>. HaulLedger is built around it from the first screen: every gallon, every tire, every quarter-IFTA mile, every overnight, all in one place.
+      </p>
+      <ul class="feature-list">
+        <li><span class="glyph">▸</span>Built for the actual-expense method. No standard mileage trap.</li>
+        <li><span class="glyph">▸</span>Designed for owner-operators, lease purchase, and 1099 company drivers.</li>
+        <li><span class="glyph">▸</span>Settlement statement parser remembers the line items your broker or carrier always sends.</li>
+        <li><span class="glyph">▸</span>Per-load profit, cost-per-mile, and net margin — not just gross revenue.</li>
+      </ul>
+    </div>
+    <div class="visual reveal">
+      <div class="card-stack">
+        <div class="data-card">
+          <div class="head">
+            <span>Settlement · #SET-2104</span>
+            <span class="stamp">Loaded</span>
+          </div>
+          <div class="body">
+            <div class="settlement-line pay">
+              <span class="l">Linehaul · 1,840 mi</span>
+              <span class="r">$3,772.00</span>
+            </div>
+            <div class="settlement-line pay">
+              <span class="l">Detention · 3.5 hr</span>
+              <span class="r">$175.00</span>
+            </div>
+            <div class="settlement-line pay">
+              <span class="l">Fuel surcharge</span>
+              <span class="r">$524.40</span>
+            </div>
+            <div class="settlement-line deduct">
+              <span class="l">Tractor lease pmt</span>
+              <span class="r">−$612.00</span>
+            </div>
+            <div class="settlement-line deduct">
+              <span class="l">Cargo insurance</span>
+              <span class="r">−$94.00</span>
+            </div>
+            <div class="settlement-line deduct">
+              <span class="l">ELD subscription</span>
+              <span class="r">−$38.50</span>
+            </div>
+            <div class="settlement-line deduct">
+              <span class="l">Comdata fee</span>
+              <span class="r">−$12.00</span>
+            </div>
+            <div class="settlement-total">
+              <span class="l">Net deposit</span>
+              <span class="r">$3,714.90</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="card-caption">01 · Every settlement, parsed and kept.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="pullquote">
+  <blockquote class="reveal">
+    <span class="glyph">“</span>You drive the miles. We <em>track</em> the deduction.<span class="glyph">”</span>
+  </blockquote>
+  <cite class="reveal">— The whole pitch, in one line.</cite>
+</section>
+
+<!-- IFTA SPREAD -->
+<section id="features">
+  <div class="spread flip">
+    <div class="copy reveal">
+      <div class="marker"><span class="roman">II.</span><span class="label">The quarterly</span></div>
+      <h2>IFTA, <em>done</em> at the rest area.</h2>
+      <p class="lede">
+        Every fuel ticket and every state-line crossing feeds the IFTA calculator. At the end of the quarter you get gallons burned and miles driven per jurisdiction, plus a net tax owed or refund per state — ready to drop into your filing.
+      </p>
+      <ul class="feature-list">
+        <li><span class="glyph">▸</span>State-by-state gallons, miles, and average MPG.</li>
+        <li><span class="glyph">▸</span>Net tax owed or refund per jurisdiction, for the quarter.</li>
+        <li><span class="glyph">▸</span>Fuel-receipt scanner — gallons, price, state, date.</li>
+        <li><span class="glyph">▸</span>Trip log with auto state-line detection on the iPhone GPS.</li>
+      </ul>
+    </div>
+    <div class="visual reveal">
+      <div class="card-stack">
+        <div class="data-card tilt-r">
+          <div class="head">
+            <span>IFTA · Q1 2026</span>
+            <span class="stamp">Ready</span>
+          </div>
+          <div class="body">
+            <div class="ifta-row refund">
+              <span class="st">TX</span>
+              <span class="gal">412 gal · 2,840 mi</span>
+              <span class="tax">−$58.20</span>
+            </div>
+            <div class="ifta-row owed">
+              <span class="st">PA</span>
+              <span class="gal">198 gal · 1,420 mi</span>
+              <span class="tax">+$94.10</span>
+            </div>
+            <div class="ifta-row owed">
+              <span class="st">CA</span>
+              <span class="gal">124 gal · 980 mi</span>
+              <span class="tax">+$112.40</span>
+            </div>
+            <div class="ifta-row refund">
+              <span class="st">OK</span>
+              <span class="gal">86 gal · 612 mi</span>
+              <span class="tax">−$8.60</span>
+            </div>
+            <div class="ifta-row owed">
+              <span class="st">IL</span>
+              <span class="gal">102 gal · 720 mi</span>
+              <span class="tax">+$31.20</span>
+            </div>
+            <div class="ifta-row refund">
+              <span class="st">MO</span>
+              <span class="gal">94 gal · 680 mi</span>
+              <span class="tax">−$14.50</span>
+            </div>
+            <div class="settlement-total">
+              <span class="l">Net Q1 owed</span>
+              <span class="r">$156.40</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="card-caption">02 · The IFTA worksheet, ready to file.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PER DIEM -->
+<section id="perdiem">
+  <div class="spread">
+    <div class="copy reveal">
+      <div class="marker"><span class="roman">III.</span><span class="label">The biggest deduction</span></div>
+      <h2>$69 a day. <em>Every</em> overnight away.</h2>
+      <p class="lede">
+        The IRS lets transportation workers under hours-of-service rules deduct <strong>$69 per day</strong> for meals and incidental expenses on overnights away from your tax home — at <strong>80% deductibility</strong>. HaulLedger logs the overnight automatically and keeps the running total visible all year, not just at tax time.
+      </p>
+      <ul class="feature-list">
+        <li><span class="glyph">▸</span>Overnight detection — full-day, partial-day (¾ rate), and home-day handled by the IRS rules.</li>
+        <li><span class="glyph">▸</span>Running deduction counter, refreshed every settlement week.</li>
+        <li><span class="glyph">▸</span>Editable: mark a stop as personal travel and we drop it from the count.</li>
+        <li><span class="glyph">▸</span>One tap to export the year's overnight log as a CSV for your CPA.</li>
+      </ul>
+    </div>
+    <div class="visual reveal">
+      <div class="card-stack">
+        <div class="data-card perdiem-card">
+          <div class="head">
+            <span>Per diem · YTD 2026</span>
+            <span class="stamp">$69/day</span>
+          </div>
+          <div class="body">
+            <div class="big">$12,876</div>
+            <div class="small">186 overnights · 80% deductible</div>
+            <div class="perdiem-formula">
+              186 days <span class="eq">×</span> $69 <span class="eq">×</span> <span class="pct">80%</span><br/>
+              <span class="eq">=</span> <span class="out">$10,267.20</span> deduction
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="card-caption">03 · The deduction that pays for the subscription many times over.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPENSES -->
+<section>
+  <div class="spread flip">
+    <div class="copy reveal">
+      <div class="marker"><span class="roman">IV.</span><span class="label">Everything else</span></div>
+      <h2>Every receipt, <em>filed</em> by category.</h2>
+      <p class="lede">
+        Snap a receipt at the fuel desk and HaulLedger reads the amount, the date, and the state. Categories are pre-mapped to Schedule C lines — fuel, repairs &amp; maintenance, insurance, lease payments, tolls &amp; scales, ELD &amp; load board, parking, supplies. Nothing to learn.
+      </p>
+      <ul class="feature-list">
+        <li><span class="glyph">▸</span>Receipt scanner — OCR on-device, no upload required.</li>
+        <li><span class="glyph">▸</span>Pre-mapped trucking categories: fuel, tires, repairs, tolls, scales, lumper, lodging, parking.</li>
+        <li><span class="glyph">▸</span>Tag expenses to a load — get true per-load profit, not just per-week.</li>
+        <li><span class="glyph">▸</span>Mileage log split by loaded · empty · bobtail for honest cost-per-mile.</li>
+      </ul>
+    </div>
+    <div class="visual reveal">
+      <div class="card-stack">
+        <div class="data-card tilt-r">
+          <div class="head">
+            <span>Schedule C export · 2025</span>
+            <span class="stamp">PDF + CSV</span>
+          </div>
+          <div class="body">
+            <div class="settlement-line"><span class="l">Line 9 · Car &amp; truck expenses</span><span class="r">$48,210</span></div>
+            <div class="settlement-line"><span class="l">Line 15 · Insurance</span><span class="r">$8,940</span></div>
+            <div class="settlement-line"><span class="l">Line 16a · Mortgage / lease</span><span class="r">$14,400</span></div>
+            <div class="settlement-line"><span class="l">Line 20a · Equipment rent</span><span class="r">$2,820</span></div>
+            <div class="settlement-line"><span class="l">Line 21 · Repairs &amp; maint.</span><span class="r">$6,182</span></div>
+            <div class="settlement-line"><span class="l">Line 22 · Supplies</span><span class="r">$1,124</span></div>
+            <div class="settlement-line"><span class="l">Line 24a · Travel</span><span class="r">$3,860</span></div>
+            <div class="settlement-line"><span class="l">Line 24b · Meals (per diem)</span><span class="r">$13,800</span></div>
+            <div class="settlement-line"><span class="l">Line 27a · Other (tolls, scales)</span><span class="r">$4,210</span></div>
+            <div class="settlement-total">
+              <span class="l">Total deductions</span>
+              <span class="r">$103,546</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="card-caption">04 · Schedule C, mapped line-by-line.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY -->
+<section>
+  <div class="spread">
+    <div class="copy reveal">
+      <div class="marker"><span class="roman">V.</span><span class="label">Yours, only</span></div>
+      <h2>Your books, <em>not</em> ours.</h2>
+      <p class="lede">
+        Every settlement, every receipt, every mile is stored on your iPhone with SwiftData. Optional iCloud sync uses <em>your</em> iCloud — Apple's encrypted infrastructure, not a HaulLedger server in the middle. Sign in with Apple is supported if you want it. We have no account database, no ad SDK, no third-party tracker.
+      </p>
+      <ul class="feature-list">
+        <li><span class="glyph">▸</span>No HaulLedger servers. No accounts to lose to a breach we never had.</li>
+        <li><span class="glyph">▸</span>Optional iCloud sync via CloudKit — encrypted, your iCloud only.</li>
+        <li><span class="glyph">▸</span>Location data is used only for the trip log and never leaves the device.</li>
+        <li><span class="glyph">▸</span>StoreKit handles payment. We never see a card number.</li>
+      </ul>
+    </div>
+    <div class="visual reveal">
+      <div class="card-stack">
+        <div class="data-card">
+          <div class="head">
+            <span>Privacy at a glance</span>
+            <span class="stamp">On-device</span>
+          </div>
+          <div class="body">
+            <div class="settlement-line"><span class="l">Settlement statements</span><span class="r">on device</span></div>
+            <div class="settlement-line"><span class="l">Fuel &amp; receipt photos</span><span class="r">on device</span></div>
+            <div class="settlement-line"><span class="l">Trip log &amp; GPS</span><span class="r">on device</span></div>
+            <div class="settlement-line"><span class="l">Per-diem overnights</span><span class="r">on device</span></div>
+            <div class="settlement-line"><span class="l">iCloud sync</span><span class="r">opt-in · your iCloud</span></div>
+            <div class="settlement-line"><span class="l">Analytics SDK</span><span class="r">none</span></div>
+            <div class="settlement-line"><span class="l">Ad SDK</span><span class="r">none</span></div>
+            <div class="settlement-line"><span class="l">Third-party trackers</span><span class="r">none</span></div>
+            <div class="settlement-total">
+              <span class="l">Servers we run</span>
+              <span class="r">zero</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="card-caption">05 · The shortest privacy policy in trucking.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-head reveal">
+    <div class="eyebrow"><span class="num">VI.</span>The numbers</div>
+    <h2>One subscription. <em>One</em> truck's worth of tools.</h2>
+    <p class="lede" style="margin-left: auto; margin-right: auto;">7-day free trial on both plans. Cancel anytime in iOS Settings → Subscriptions.</p>
+  </div>
+  <div class="price-cards">
+    <article class="price-card reveal">
+      <div class="tier">Monthly</div>
+      <div class="price"><em>$14.99</em><small>/month after 7-day free trial</small></div>
+      <ul>
+        <li>Unlimited settlement statements</li>
+        <li>IFTA quarterly worksheet</li>
+        <li>$69/day per-diem tracker</li>
+        <li>Receipt scanner + Schedule C export</li>
+        <li>Optional iCloud sync</li>
+        <li>Cancel anytime</li>
+      </ul>
+      <a class="alt-cta" href="https://apps.apple.com/us/app/haulledger-truck-tax-tracker/id6771089775">Start trial →</a>
+    </article>
+    <article class="price-card featured reveal">
+      <span class="badge">Save 44%</span>
+      <div class="tier">Yearly</div>
+      <div class="price"><em>$99.99</em><small>/year — works out to $8.33/month</small></div>
+      <ul>
+        <li>Everything in Monthly</li>
+        <li>Save $79.89 vs. paying monthly</li>
+        <li>7-day free trial · no charge until day 8</li>
+        <li>One settlement check covers the year</li>
+        <li>Deductible as a business expense</li>
+        <li>Cancel anytime</li>
+      </ul>
+      <a class="alt-cta" href="https://apps.apple.com/us/app/haulledger-truck-tax-tracker/id6771089775">Start trial →</a>
+    </article>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="disclaimer">
+  <div class="disclaimer-inner">
+    <div class="disclaimer-tag">Not tax advice</div>
+    <p>
+      HaulLedger is a <strong>tracking tool</strong>, not a tax-filing service and <strong>not a substitute for a CPA</strong> or licensed tax professional. Per-diem rates, IFTA rates, and Schedule C rules change — verify with your accountant before filing. We give you clean numbers; the filing is yours.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="colophon">
+  <div class="colophon-grid">
+    <div class="sign">
+      Built for the <em>cab of the truck.</em><br/>
+      Not the corner office.
+    </div>
+    <div>
+      <h3>App</h3>
+      <ul>
+        <li><a href="https://apps.apple.com/us/app/haulledger-truck-tax-tracker/id6771089775">App Store</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#perdiem">Per diem</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Help</h3>
+      <ul>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="mailto:haulledger.help@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">EULA</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="meta-row">
+    <span>© 2026 Andrew Titus</span>
+    <span>iPhone · iOS 18+</span>
+    <span>Not affiliated with the IRS or any carrier</span>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const obs = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        obs.unobserve(e.target);
+      }
+    }
+  }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i % 6) * 60 + 'ms';
+    obs.observe(el);
+  });
+</script>
+</body>
+</html>

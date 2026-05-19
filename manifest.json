@@ -1,0 +1,12 @@
+{
+  "name": "HaulLedger — Truck Tax Tracker",
+  "short_name": "HaulLedger",
+  "description": "Trucker tax tracking for iPhone — settlements, IFTA, per diem, and Schedule C export.",
+  "start_url": "/haulledger-site/",
+  "scope": "/haulledger-site/",
+  "display": "standalone",
+  "background_color": "#f6f4ef",
+  "theme_color": "#0D7377",
+  "lang": "en-US",
+  "icons": []
+}

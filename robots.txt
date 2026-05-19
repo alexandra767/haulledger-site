@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alexandra767.github.io/haulledger-site/sitemap.xml
