@@ -3,13 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>HaulLedger — Trucker tax tracking that pays for itself</title>
-<meta name="description" content="HaulLedger is the tax tracker for truckers. Log settlement statements, calculate IFTA fuel tax across states, claim the $69/day per diem, scan receipts, and export Schedule C — built for owner-operators, lease purchase, and company drivers. iPhone only. 7-day free trial." />
-<meta name="keywords" content="trucker tax app, owner operator tax tracker, IFTA calculator, per diem trucker, settlement statement tracker, Schedule C trucker, fuel tax tracker, lease purchase driver, trucker expense tracker, 1099 trucker taxes" />
+<title>HaulLedger — Trucker Tax Tracker &amp; IFTA Calculator for Owner-Operators</title>
+<meta name="description" content="HaulLedger is the trucker tax tracker for iPhone. Log settlement statements, calculate IFTA quarterly fuel tax, claim the $69/day per diem at 80%, scan receipts, and export Schedule C. Built for owner-operators and 1099 drivers. 7-day free trial." />
+<meta name="keywords" content="trucker tax tracker, trucker tax app, owner operator tax app, IFTA calculator, IFTA quarterly tax calculator, per diem trucker, trucker per diem 80% deduction, settlement statement tracker, Schedule C trucker, fuel tax tracker, lease purchase driver, trucker expense tracker, 1099 trucker taxes, truck driver mileage app" />
 <meta name="author" content="Andrew Titus" />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+<meta name="googlebot" content="index,follow" />
 <meta name="theme-color" content="#0D7377" />
 <meta name="application-name" content="HaulLedger" />
 <meta name="apple-mobile-web-app-title" content="HaulLedger" />
+<meta name="format-detection" content="telephone=no" />
+
+<!-- PLACEHOLDER: replace with the token shown after verifying ownership at https://search.google.com/search-console -->
+<meta name="google-site-verification" content="REPLACE_WITH_GOOGLE_SEARCH_CONSOLE_TOKEN" />
 
 <link rel="canonical" href="https://alexandra767.github.io/haulledger-site/" />
 
@@ -17,14 +23,23 @@
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="HaulLedger" />
 <meta property="og:url" content="https://alexandra767.github.io/haulledger-site/" />
-<meta property="og:title" content="HaulLedger — Trucker tax tracking that pays for itself" />
-<meta property="og:description" content="The tax tracker built for the cab of the truck. Settlement statements, IFTA quarterly, per diem at $69/day, receipt scanning, Schedule C export. iPhone." />
+<meta property="og:title" content="HaulLedger — Trucker Tax Tracker &amp; IFTA Calculator for Owner-Operators" />
+<meta property="og:description" content="The tax tracker built for the cab of the truck. Settlement statements, IFTA quarterly, $69/day per diem, receipt scanning, Schedule C export. iPhone. 7-day free trial." />
+<meta property="og:image" content="https://alexandra767.github.io/haulledger-site/img/og-banner.png" />
+<meta property="og:image:secure_url" content="https://alexandra767.github.io/haulledger-site/img/og-banner.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="HaulLedger — trucker tax tracker for iPhone" />
 <meta property="og:locale" content="en_US" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="HaulLedger — Trucker tax tracking that pays for itself" />
-<meta name="twitter:description" content="Settlement statements, IFTA, per diem, fuel tax, Schedule C — built for owner-operators and lease-purchase drivers. iPhone. 7-day free trial." />
+<meta name="twitter:url" content="https://alexandra767.github.io/haulledger-site/" />
+<meta name="twitter:title" content="HaulLedger — Trucker Tax Tracker &amp; IFTA Calculator" />
+<meta name="twitter:description" content="Settlement statements, IFTA, $69/day per diem, fuel tax, Schedule C — for owner-operators and 1099 drivers. iPhone. 7-day free trial." />
+<meta name="twitter:image" content="https://alexandra767.github.io/haulledger-site/img/og-banner.png" />
+<meta name="twitter:image:alt" content="HaulLedger — trucker tax tracker for iPhone" />
 
 <!-- iOS Smart App Banner -->
 <meta name="apple-itunes-app" content="app-id=6771089775" />
@@ -38,20 +53,33 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "MobileApplication",
+      "@type": ["SoftwareApplication", "MobileApplication"],
       "@id": "https://alexandra767.github.io/haulledger-site/#app",
       "name": "HaulLedger: Truck Tax Tracker",
-      "alternateName": "HaulLedger",
+      "alternateName": ["HaulLedger", "HaulLedger Trucker Tax Tracker", "HaulLedger IFTA Calculator"],
       "operatingSystem": "iOS 18.0",
       "applicationCategory": "FinanceApplication",
       "applicationSubCategory": "Trucking & Tax Tracking",
-      "description": "Tax tracking built for truck drivers. Log settlement statements, calculate IFTA fuel tax across states, claim the $69/day per diem, scan receipts, and export Schedule C. For owner-operators, lease purchase, and company drivers.",
+      "description": "Trucker tax tracker for iPhone. Log settlement statements, calculate IFTA quarterly fuel tax, claim the $69/day per diem at 80%, scan receipts, and export Schedule C. Built for owner-operators, lease purchase, and 1099 drivers using the actual-expense method.",
       "url": "https://alexandra767.github.io/haulledger-site/",
       "downloadUrl": "https://apps.apple.com/us/app/haulledger-truck-tax-tracker/id6771089775",
       "installUrl": "https://apps.apple.com/us/app/haulledger-truck-tax-tracker/id6771089775",
+      "image": "https://alexandra767.github.io/haulledger-site/img/og-banner.png",
+      "screenshot": "https://alexandra767.github.io/haulledger-site/img/og-banner.png",
+      "softwareVersion": "1.0",
+      "featureList": [
+        "Settlement statement logging",
+        "IFTA quarterly fuel tax calculator",
+        "$69/day per-diem tracking at 80% deductibility",
+        "On-device receipt scanner (OCR)",
+        "Schedule C PDF + CSV export",
+        "Loaded / empty / bobtail mileage split",
+        "Trip log with state-line detection",
+        "Optional iCloud sync via CloudKit"
+      ],
       "offers": [
-        { "@type": "Offer", "name": "Monthly", "price": "14.99", "priceCurrency": "USD", "category": "subscription" },
-        { "@type": "Offer", "name": "Yearly", "price": "99.99", "priceCurrency": "USD", "category": "subscription" }
+        { "@type": "Offer", "name": "Monthly", "price": "14.99", "priceCurrency": "USD", "category": "subscription", "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "name": "Yearly", "price": "99.99", "priceCurrency": "USD", "category": "subscription", "availability": "https://schema.org/InStock" }
       ],
       "author": { "@id": "https://alexandra767.github.io/haulledger-site/#person" },
       "publisher": { "@id": "https://alexandra767.github.io/haulledger-site/#person" },
@@ -63,9 +91,22 @@
       "@id": "https://alexandra767.github.io/haulledger-site/#website",
       "url": "https://alexandra767.github.io/haulledger-site/",
       "name": "HaulLedger",
-      "description": "Trucker tax tracking for iPhone.",
+      "description": "Trucker tax tracking for iPhone — settlements, IFTA, per diem, Schedule C.",
       "publisher": { "@id": "https://alexandra767.github.io/haulledger-site/#person" },
       "inLanguage": "en-US"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://alexandra767.github.io/haulledger-site/#org",
+      "name": "HaulLedger",
+      "url": "https://alexandra767.github.io/haulledger-site/",
+      "logo": "https://alexandra767.github.io/haulledger-site/img/og-banner.png",
+      "founder": { "@id": "https://alexandra767.github.io/haulledger-site/#person" },
+      "email": "gigledger.help@gmail.com",
+      "areaServed": "US",
+      "sameAs": [
+        "https://apps.apple.com/us/app/haulledger-truck-tax-tracker/id6771089775"
+      ]
     },
     {
       "@type": "Person",
@@ -1466,7 +1507,7 @@
       <ul>
         <li><a href="support.html">Support</a></li>
         <li><a href="privacy.html">Privacy</a></li>
-        <li><a href="mailto:haulledger.help@gmail.com">Contact</a></li>
+        <li><a href="mailto:gigledger.help@gmail.com">Contact</a></li>
       </ul>
     </div>
     <div>

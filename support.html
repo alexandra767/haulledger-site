@@ -3,14 +3,87 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>HaulLedger — Support &amp; Contact</title>
-<meta name="description" content="HaulLedger support page. How to track miles, log settlements, run the IFTA calculator, claim per diem, restore purchases, and cancel your subscription." />
-<link rel="canonical" href="https://alexandra767.github.io/haulledger-site/support.html" />
+<title>HaulLedger Support — Trucker Tax Tracker Help, IFTA &amp; Per Diem FAQ</title>
+<meta name="description" content="HaulLedger support and FAQ. How to track loaded miles, log settlement statements, run the IFTA quarterly calculator, claim the $69/day trucker per diem, scan receipts, restore purchases, and cancel your subscription." />
+<meta name="keywords" content="HaulLedger support, trucker tax app help, IFTA quarterly calculator how to, per diem trucker FAQ, settlement statement help, restore purchases trucker app, cancel HaulLedger subscription" />
+<meta name="author" content="Andrew Titus" />
 <meta name="robots" content="index,follow" />
-<meta property="og:title" content="HaulLedger — Support" />
-<meta property="og:description" content="Help with HaulLedger — the truck-tax tracker for iPhone." />
-<meta property="og:url" content="https://alexandra767.github.io/haulledger-site/support.html" />
+<meta name="theme-color" content="#0D7377" />
+<link rel="canonical" href="https://alexandra767.github.io/haulledger-site/support.html" />
+
+<!-- Open Graph -->
 <meta property="og:type" content="article" />
+<meta property="og:site_name" content="HaulLedger" />
+<meta property="og:url" content="https://alexandra767.github.io/haulledger-site/support.html" />
+<meta property="og:title" content="HaulLedger — Support &amp; FAQ" />
+<meta property="og:description" content="Help with HaulLedger — the trucker tax tracker for iPhone. IFTA, per diem, settlements, Schedule C." />
+<meta property="og:image" content="https://alexandra767.github.io/haulledger-site/img/og-banner.png" />
+<meta property="og:image:alt" content="HaulLedger — trucker tax tracker for iPhone" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="HaulLedger — Support &amp; FAQ" />
+<meta name="twitter:description" content="IFTA, per diem, settlements, receipts — answered. iPhone trucker tax tracker." />
+<meta name="twitter:image" content="https://alexandra767.github.io/haulledger-site/img/og-banner.png" />
+
+<!-- FAQ structured data for rich results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I start tracking miles in HaulLedger?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open HaulLedger > Trips > Start trip. Grant the Location permission when iOS asks. HaulLedger logs your route, detects state-line crossings for IFTA, and splits mileage into loaded, empty, and bobtail."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the IFTA quarterly calculator work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HaulLedger combines fuel receipts (gallons purchased per state) with your trip log (miles driven per state) to compute average MPG, tax owed, and net refund or balance per jurisdiction for each quarter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the trucker per diem calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The IRS lets transportation workers under hours-of-service rules deduct $69 per day for meals and incidental expenses when away from your tax home overnight, at 80% deductibility. HaulLedger detects overnights from your trip log and applies the rate, with the IRS 75% partial-day rule for departure and return days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I restore purchases on a new iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sign in to the same Apple ID you used to subscribe, then open HaulLedger > Settings > Restore Purchases."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I cancel my HaulLedger subscription?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "iOS Settings > tap your name > Subscriptions > HaulLedger > Cancel Subscription. You keep access until the end of the current billing period."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does HaulLedger work for W-2 company drivers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Partially. Most W-2 driver expenses are no longer deductible under the 2017 Tax Cuts and Jobs Act. HaulLedger is most valuable for 1099 owner-operators and lease-purchase drivers who file Schedule C."
+      }
+    }
+  ]
+}
+</script>
 <style>
   body {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
@@ -34,7 +107,7 @@
 <body>
 <div class="container">
   <h1>Support</h1>
-  <p>Need help with HaulLedger? Email <a href="mailto:haulledger.help@gmail.com">haulledger.help@gmail.com</a> and we'll respond within 24 hours. Please include your iOS version and a short description of what you were doing when the issue happened.</p>
+  <p>Need help with HaulLedger? Email <a href="mailto:gigledger.help@gmail.com">gigledger.help@gmail.com</a> and we'll respond within 24 hours. Please include your iOS version and a short description of what you were doing when the issue happened.</p>
 
   <h2>Frequently asked</h2>
 
@@ -93,7 +166,12 @@
     <p>No. HaulLedger is a tracker. It produces clean numbers; a licensed accountant or tax professional should review and file your return. Per-diem rates, IFTA rates, and Schedule C rules change — verify with your CPA before filing.</p>
   </div>
 
-  <a class="back" href="https://alexandra767.github.io/haulledger-site/">← Back to HaulLedger</a>
+  <nav aria-label="Site" style="margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(10,26,28,0.10); display: flex; flex-wrap: wrap; gap: 18px; font-size: 14px;">
+    <a href="https://alexandra767.github.io/haulledger-site/">← HaulLedger home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="mailto:gigledger.help@gmail.com">Contact</a>
+  </nav>
 </div>
 </body>
 </html>

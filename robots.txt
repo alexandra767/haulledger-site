@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Be friendly to Googlebot specifically (no special restrictions)
+User-agent: Googlebot
+Allow: /
+
+# Sitemap
 Sitemap: https://alexandra767.github.io/haulledger-site/sitemap.xml
